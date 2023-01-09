@@ -130,29 +130,17 @@
 
 
   primaryThemeFunction = () => {
-    const {theme} = this.state;
     localStorage.setItem('theme','light');
-    this.setState({
-      theme: localStorage.getItem('theme')
-    })
-    console.log("logFrom console",localStorage.getItem('theme'));
+     this.setState({})
   }
   secondaryThemeFunction = () => {
-    // this.setState({
-    //   theme: "dark"
-    // });
-    const {theme} = this.state;
     localStorage.setItem('theme','dark');
-    this.setState({
-      theme: localStorage.getItem('theme')
-    })
-    console.log("logFrom console",localStorage.getItem('theme'));
-
+    this.setState({});
   }
 
  
   render(){
-    const {products, loading, theme} = this.state;
+    const {products, loading} = this.state;
     // console.log("log from render",localStorage.getItem(theme));
     // localStorage.setItem(theme,'dark');
 

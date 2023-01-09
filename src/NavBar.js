@@ -1,9 +1,9 @@
 import React from 'react';
 const NavBar = (props) => {
     const {mes} = props;
-    console.log("popop",props.mes);
+    console.log("popop",mes);
     return (
-            <div className="navbar" id = {props.mes}> 
+            <div className="navbar" id = {mes}> 
             <div className="navbar-buttons">
                 <button onClick={props.primaryTheme}> Primary </button>
                 <button onClick={props.secondaryTheme}> Secondary </button>
