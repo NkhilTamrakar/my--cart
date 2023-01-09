@@ -16,7 +16,8 @@
       this.state = {
           products:[],
           loading: true,
-          theme: 'light'
+          theme: 'dark',
+          // newtheme: ''
       }
       
     }
@@ -127,29 +128,39 @@
     return price ;
   }
 
+
   primaryThemeFunction = () => {
+    const {theme} = this.state;
+    localStorage.setItem('theme','light');
     this.setState({
-      theme: "light"
-    });
+      theme: localStorage.getItem('theme')
+    })
+    console.log("logFrom console",localStorage.getItem('theme'));
   }
   secondaryThemeFunction = () => {
+    // this.setState({
+    //   theme: "dark"
+    // });
+    const {theme} = this.state;
+    localStorage.setItem('theme','dark');
     this.setState({
-      theme: "dark"
-    });
+      theme: localStorage.getItem('theme')
+    })
+    console.log("logFrom console",localStorage.getItem('theme'));
+
   }
+
  
-
-
-
-
-
   render(){
     const {products, loading, theme} = this.state;
+    // console.log("log from render",localStorage.getItem(theme));
+    // localStorage.setItem(theme,'dark');
+
     return (
       <div className="App">
         <NavBar 
         count = {this.getCartCount()}
-        mes = {theme}
+        mes = {localStorage.getItem('theme')}
         primaryTheme = {this.primaryThemeFunction}
         secondaryTheme = {this.secondaryThemeFunction}
        
@@ -164,7 +175,7 @@
 
         {loading && <h1>please wait we are loading your products..</h1>}
         <Footer 
-          mes = {theme}
+          mes = {localStorage.getItem('theme')}
           price = {this.getPrice()}
         />
       </div>

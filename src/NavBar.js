@@ -1,7 +1,7 @@
 import React from 'react';
 const NavBar = (props) => {
-    // const {mes} = props;
-    // console.log(props.mes);
+    const {mes} = props;
+    console.log("popop",props.mes);
     return (
             <div className="navbar" id = {props.mes}> 
             <div className="navbar-buttons">
