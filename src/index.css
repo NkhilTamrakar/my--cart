@@ -28,7 +28,7 @@ body {
   padding-top: 70px;
   padding-bottom: 70px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 .cart-icon {
   height: 32px;
@@ -37,17 +37,46 @@ body {
 button {
   margin-top: 70px;
 }
+#dark {
+  background-color: rgb(222, 55, 55);
+  color: white;
+}
+
+#light {
+   background-color: grey;
+   color: aliceblue;
+}
 .navbar {
-   height: 70px;
-   background-color: burlywood;
-   width: 100%;
-   position: fixed;
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
+  height: 70px;
+  background-color: burlywood;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar .navbar-buttons {
+   position: relative;
+   padding: 2px 3px;
+
+}
+.navbar .navbar-buttons button{
+  margin: 2px 4px;
+  padding:4px 6px;
+  font-family: cursive;
+  border-radius: 7px;
+  transition: 1s;
+
+}
+.navbar .navbar-buttons button:hover {
+  background-color: black;
+  color: aliceblue;
+  cursor: pointer;
+  
 }
 .navbar .heading:hover {
   color: black;
+
 }
 .footer {
   height: 80px;
@@ -80,7 +109,7 @@ button {
   flex-direction: row;
 }
 .cart-icon-span {
-  background-color: chartreuse;
+  background-color: rgb(0, 0, 0);
    border-radius: 50%;
    padding: 3px 9px;
    position: absolute;

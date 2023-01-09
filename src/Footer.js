@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = (props) => {
     return (
-            <div className="footer"> 
+            <div className="footer" id = {props.mes} > 
                 <div className='footer-center'>
                     Copyright © 2023 Nikhil Tamrakar [ intern P360 ]
                 </div>

@@ -15,7 +15,8 @@
       super();
       this.state = {
           products:[],
-          loading: true
+          loading: true,
+          theme: 'light'
       }
       
     }
@@ -126,12 +127,32 @@
     return price ;
   }
 
+  primaryThemeFunction = () => {
+    this.setState({
+      theme: "light"
+    });
+  }
+  secondaryThemeFunction = () => {
+    this.setState({
+      theme: "dark"
+    });
+  }
+ 
+
+
+
+
+
   render(){
-    const {products, loading} = this.state;
+    const {products, loading, theme} = this.state;
     return (
       <div className="App">
         <NavBar 
         count = {this.getCartCount()}
+        mes = {theme}
+        primaryTheme = {this.primaryThemeFunction}
+        secondaryTheme = {this.secondaryThemeFunction}
+       
         />
         
         <Cart 
@@ -143,6 +164,7 @@
 
         {loading && <h1>please wait we are loading your products..</h1>}
         <Footer 
+          mes = {theme}
           price = {this.getPrice()}
         />
       </div>
